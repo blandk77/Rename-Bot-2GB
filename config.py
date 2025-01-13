@@ -19,8 +19,8 @@ class Config(object):
 
     # channels logs
     FORCE_SUB   = os.environ.get("FORCE_SUB", "the_tgguy") 
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
-    BIN_CHANNEL = int(os.environ.get("BIN_CHANNEL", ""))
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002494020519"))
+    BIN_CHANNEL = int(os.environ.get("BIN_CHANNEL", "-1002343229315"))
 
     # wes response configuration     
     WEBHOOK = bool(os.environ.get("WEBHOOK", True))
@@ -41,7 +41,7 @@ class Txt(object):
 ❍ ʜᴏsᴛᴇᴅ ᴏɴ : ᴋᴏʏᴇʙ
 ❍ ᴅᴀᴛᴀʙᴀsᴇ : ᴍᴏɴɢᴏ ᴅʙ
 ❍ ʟᴀɴɢᴜᴀɢᴇ : ᴘʏᴛʜᴏɴ 𝟹
-❍ ᴍʏ ᴄʀᴇᴀᴛᴏʀ : <a href='https://telegram.me/'>𝙸𝚝𝚜𝚖𝚎𝟷𝟸𝟹𝚒</a>
+❍ ᴍʏ ᴄʀᴇᴀᴛᴏʀ : <a href='https://telegram.me/TGguy_Ownerobot'>𝙸𝚝𝚜𝚖𝚎𝟷𝟸𝟹𝚒</a>
 
 ➻ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ꜰᴏʀ ɢᴇᴛᴛɪɴɢ ᴍᴏʀᴇ ɪɴꜰᴏ ᴀʙᴏᴜᴛ ᴍᴇ.</b>
 """
@@ -112,7 +112,7 @@ class Txt(object):
 
 💖 𝐔𝐏𝐈 𝐈𝐃 : `7305347700@pytes`
 
-💗 𝐐𝐑 𝐂𝐨𝐝𝐞 : <b><a href=''>𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾</a></b>
+💗 𝐐𝐑 𝐂𝐨𝐝𝐞 : <b><a href='https://graph.org/file/07961af46f53330871cfb-870ef5d052080634a4.jpg'>𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾</a></b>
 """
 
     SEND_METADATA = """🖼️ 𝗛𝗼𝘄 𝗧𝗼 𝗦𝗲𝘁 𝗖𝘂𝘀𝘁𝗼𝗺 𝗠𝗲𝘁𝗮𝗱𝗮𝘁𝗮
@@ -121,5 +121,5 @@ For Example :-
 
 <code>By: @the_tgguy</code>
 
-💬 For Help Contact @TechifySupport
+💬 For Help Contact @TGguy_Ownerobot
 """
