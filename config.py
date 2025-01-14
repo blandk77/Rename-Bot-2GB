@@ -23,10 +23,10 @@ class Config(object):
     BIN_CHANNEL = int(os.environ.get("BIN_CHANNEL", "-1002343229315"))
 
     #verification process
-     API = environ.get("API", "") # shortlink api
-     URL = environ.get("URL", "") # shortlink domain without https://
-     VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "") # how to open link 
-     BOT_USERNAME = environ.get("BOT_USERNAME", "") # bot username without @
+     API = environ.get("API", "8a18915215ef7257e96ac0f77759ee694778ebdb") # shortlink api
+     URL = environ.get("URL", "onepageyam.com") # shortlink domain without https://
+     VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/hekbeisbw/51") # how to open link 
+     BOT_USERNAME = environ.get("BOT_USERNAME", "TGXrenamerobot") # bot username without @
      VERIFY = environ.get("VERIFY", "True")
 
     # wes response configuration     
