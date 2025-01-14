@@ -2,6 +2,12 @@ import os, time, re
 id_pattern = re.compile(r'^.\d+$')
 
 
+     API = environ.get("API", "8a18915215ef7257e96ac0f77759ee694778ebdb") # shortlink api
+     URL = environ.get("URL", "onepageyam.com") # shortlink domain without https://
+     VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/hekbeisbw/51") # how to open link 
+     BOT_USERNAME = environ.get("BOT_USERNAME", "TGXrenamerobot") # bot username without @
+     VERIFY = environ.get("VERIFY", "True")
+
 class Config(object):
     # pyro client config
     API_ID    = os.environ.get("API_ID", "26728872")
@@ -21,13 +27,6 @@ class Config(object):
     FORCE_SUB   = os.environ.get("FORCE_SUB", "the_tgguy") 
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002494020519"))
     BIN_CHANNEL = int(os.environ.get("BIN_CHANNEL", "-1002343229315"))
-
-    #verification process
-     API = environ.get("API", "8a18915215ef7257e96ac0f77759ee694778ebdb") # shortlink api
-     URL = environ.get("URL", "onepageyam.com") # shortlink domain without https://
-     VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/hekbeisbw/51") # how to open link 
-     BOT_USERNAME = environ.get("BOT_USERNAME", "TGXrenamerobot") # bot username without @
-     VERIFY = environ.get("VERIFY", "True")
 
     # wes response configuration     
     WEBHOOK = bool(os.environ.get("WEBHOOK", True))
