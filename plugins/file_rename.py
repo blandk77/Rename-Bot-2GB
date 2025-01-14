@@ -9,8 +9,8 @@ from helper.utils import progress_for_pyrogram, convert, humanbytes, add_prefix_
 from helper.database import jishubotz
 from asyncio import sleep
 from PIL import Image
-from config import Config
 from utils import check_verification, get_token
+from config import VERIFY, VERIFY_TUTORIAL, BOT_USERNAME
 import os, time, re, random, asyncio
 
 
