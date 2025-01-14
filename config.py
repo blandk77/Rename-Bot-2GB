@@ -1,6 +1,12 @@
 import os, time, re
 id_pattern = re.compile(r'^.\d+$')
 
+      #verification process
+     API = environ.get("API", "") # shortlink api
+     URL = environ.get("URL", "") # shortlink domain without https://
+     VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "") # how to open link 
+     BOT_USERNAME = environ.get("BOT_USERNAME", "") # bot username without @
+     VERIFY = environ.get("VERIFY", "True")
 
 class Config(object):
     # pyro client config
