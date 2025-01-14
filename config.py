@@ -1,12 +1,6 @@
 import os, time, re
 id_pattern = re.compile(r'^.\d+$')
 
-      #verification process
-     API = environ.get("API", "") # shortlink api
-     URL = environ.get("URL", "") # shortlink domain without https://
-     VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "") # how to open link 
-     BOT_USERNAME = environ.get("BOT_USERNAME", "") # bot username without @
-     VERIFY = environ.get("VERIFY", "True")
 
 class Config(object):
     # pyro client config
@@ -27,6 +21,13 @@ class Config(object):
     FORCE_SUB   = os.environ.get("FORCE_SUB", "the_tgguy") 
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002494020519"))
     BIN_CHANNEL = int(os.environ.get("BIN_CHANNEL", "-1002343229315"))
+
+    #verification process
+     API = environ.get("API", "") # shortlink api
+     URL = environ.get("URL", "") # shortlink domain without https://
+     VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "") # how to open link 
+     BOT_USERNAME = environ.get("BOT_USERNAME", "") # bot username without @
+     VERIFY = environ.get("VERIFY", "True")
 
     # wes response configuration     
     WEBHOOK = bool(os.environ.get("WEBHOOK", True))
