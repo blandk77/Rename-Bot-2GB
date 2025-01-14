@@ -5,8 +5,9 @@ dnspython
 hachoir
 Pillow
 aiohttp
-pytz
 Flask
 gunicorn
 aiohttp
 pyrogram
+shortzy
+pytz
