@@ -11,7 +11,7 @@ from asyncio import sleep
 from PIL import Image
 from config import Config
 from utils import check_verification, get_token
-from info import VERIFY, VERIFY_TUTORIAL, BOT_USERNAME
+from config import VERIFY, VERIFY_TUTORIAL, BOT_USERNAME
 import os, time, re, random, asyncio
 
 
