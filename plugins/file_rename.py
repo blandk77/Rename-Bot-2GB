@@ -10,6 +10,8 @@ from helper.database import jishubotz
 from asyncio import sleep
 from PIL import Image
 from config import Config
+from utils import check_verification, get_token
+from info import VERIFY, VERIFY_TUTORIAL, BOT_USERNAME
 import os, time, re, random, asyncio
 
 
@@ -22,7 +24,19 @@ async def rename_start(client, message):
         return await message.reply(
             "**ʏᴏᴜ ᴀʀᴇ ʙᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ. ᴄᴏɴᴛᴀᴄᴛ @CallOwnerBot ᴛᴏ ʀᴇsᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇ!!**"
         )
-    if file.file_size > 2000 * 1024 * 1024:
+    if not await check_verification(client, message.from_user.id) and VERIFY == True:
+           btn = [[
+                 InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{BOT_USERNAME}?start="))
+          ],[
+                 InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
+           ]]
+            await message.reply_text(
+            text="<b>You are not verified !\nKindly verify to continue !</b>",
+            protect_content=True,
+            reply_markup=InlineKeyboardMarkup(btn)
+        )
+        return
+    elif file.file_size > 2000 * 1024 * 1024:
         return await message.reply_text("Sorry, this bot doesn't support files larger than 2GB.")
 
     try:
