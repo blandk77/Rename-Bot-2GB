@@ -11,5 +11,3 @@ aiohttp
 pyrogram
 shortzy
 pytz
-requests
-json
