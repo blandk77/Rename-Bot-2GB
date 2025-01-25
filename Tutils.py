@@ -1,10 +1,12 @@
 import pytz, random, string  
 from datetime import date 
-from info import API, URL
+from config import SHORTLINK_URL, SHORTLINK_API
 from shortzy import Shortzy
 
 TOKENS = {}
 VERIFIED = {}
+API = SHORTLINK_API
+URL = SHORTLINK_URL
 
 async def get_verify_shorted_link(link):
     shortzy = Shortzy(api_key=API, base_site=URL)
