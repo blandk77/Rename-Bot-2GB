@@ -9,8 +9,11 @@ from helper.utils import progress_for_pyrogram, convert, humanbytes, add_prefix_
 from helper.database import jishubotz
 from asyncio import sleep
 from PIL import Image
-from config import Config
+from config import Config, VERIFY_MODE, VERIFY_TUTORIAL, BOT_USERNAME
 import os, time, re, random, asyncio
+from Tutils import verify_user, check_token, check_verification, get_token
+ 
+
 
 
 @Client.on_message(filters.private & (filters.document | filters.audio | filters.video))
@@ -22,6 +25,18 @@ async def rename_start(client, message):
         return await message.reply(
             "**ʏᴏᴜ ᴀʀᴇ ʙᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ. ᴄᴏɴᴛᴀᴄᴛ @CallOwnerBot ᴛᴏ ʀᴇsᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇ!!**"
         )
+    if not await check_verification(client, message.from_user.id) and VERIFY_MODE == True:
+                btn = [[
+                    InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{username}?start="))
+                ],[
+                    InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
+                ]]
+                await message.reply_text(
+                    text="<b>You are not verified !\nKindly verify to continue !</b>",
+                    protect_content=True,
+                    reply_markup=InlineKeyboardMarkup(btn)
+                )
+        return
     if file.file_size > 2000 * 1024 * 1024:
         return await message.reply_text("Sorry, this bot doesn't support files larger than 2GB.")
 
