@@ -19,8 +19,9 @@ async def start(client, message):
         await message.reply_photo(Config.START_PIC, caption=Txt.START_TXT.format(user.mention), reply_markup=button)       
     else:
         await message.reply_text(text=Txt.START_TXT.format(user.mention), reply_markup=button, disable_web_page_preview=True)
-        return 
-	data = message.command[1]
+	)
+	return 
+data = message.command[1]
     try:
         pre, file_id = data.split('_', 1)
     except:
