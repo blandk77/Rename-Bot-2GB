@@ -20,7 +20,7 @@ async def start(client, message):
     else:
         await message.reply_text(text=Txt.START_TXT.format(user.mention), reply_markup=button, disable_web_page_preview=True)
         return 
-	    data = message.command[1]
+	data = message.command[1]
     try:
         pre, file_id = data.split('_', 1)
     except:
