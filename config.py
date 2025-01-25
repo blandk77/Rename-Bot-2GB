@@ -1,4 +1,8 @@
-import os, time, re
+import re
+import os
+from os import environ
+
+
 id_pattern = re.compile(r'^.\d+$')
 def is_enabled(value, default):
     if value.lower() in ["true", "yes", "1", "enable", "y"]:
@@ -8,7 +12,14 @@ def is_enabled(value, default):
     else:
         return default
 
+# Verify Info :-
+VERIFY_MODE = bool(environ.get('VERIFY_MODE', False)) # Set True or False
 
+# If Verify Mode Is True Then Fill All Required Variable, If False Then Don't Fill.
+SHORTLINK_URL = environ.get("SHORTLINK_URL", "") # shortlink domain without https://
+SHORTLINK_API = environ.get("SHORTLINK_API", "") # shortlink api
+VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "") # how to open link 
+BOT_USERNAME = environ.get("BOT_USERNAME", "") # without @
 
 
 class Config(object):
